@@ -13,12 +13,13 @@ GeoIP.js works by providing v8->C++ glue code that interfaces with the [free Max
 1. Download the MaxMind C API from [here](http://www.maxmind.com/app/c).
 
 2. Install the MaxMind C API:
-	<pre>wget http://geolite.maxmind.com/download/geoip/api/c/GeoIP-1.4.6.tar.gz  
-tar -xvzf GeoIP-1.4.6.tar.gz  
-cd GeoIP-1.4.6  
-./configure  
-make  
-sudo make install</pre>
+	<pre>
+	wget http://geolite.maxmind.com/download/geoip/api/c/GeoIP-1.4.6.tar.gz  
+	tar -xvzf GeoIP-1.4.6.tar.gz  
+	cd GeoIP-1.4.6  
+	./configure  
+	make  
+	sudo make install</pre>
 
    Note: 'sudo make install' also installs a few command line programs: geoiplookup, geoiplookup6, and geoipupdate. You probably don't want them. To remove them, just delete them from '/usr/local/bin/'.
 
