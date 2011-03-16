@@ -24,7 +24,7 @@ def shutdown(bld):
   # HACK to get binding.node out of build directory.
   # better way to do this?
   if Options.commands['clean']:
-    if exists('uuid.node'): unlink('geoip.node')
+    if exists('geoip.node'): unlink('geoip.node')
   else:
     if exists('build/default/geoip.node') and not exists('geoip.node'):
       symlink(getcwd()+'/build/default/geoip.node', 'geoip.node')
