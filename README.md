@@ -24,13 +24,13 @@ GeoIP.js works by providing v8->C++ glue code that interfaces with the [free Max
 
 3. Download this project and build it:
 	<pre> git clone git@github.com:joevennix/GeoIP-js.git
-	cd GeoIP-JS
+	cd GeoIP-js
 	node-waf configure build</pre>
 
 4. Download the MaxMind Geocoding Database file, [GeoLiteCity.dat.gz](http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz). Un-gzip this file and stick it where ever you want.
 
 5. That's it! Let's look at some code:
-    <pre> var geo = require('./GeoIP-JS/geoip.js');
+    <pre> var geo = require('./GeoIP-js/geoip.js');
     geo.open({ cache: true, filename: './geoip/GeoLiteCity.dat'});
     var coord = geo.lookup('74.125.227.16');
     console.log(coord);
