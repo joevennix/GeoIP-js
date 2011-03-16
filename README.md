@@ -21,7 +21,8 @@ GeoIP.js works by providing v8->C++ glue code that interfaces with the [free Max
 	make  
 	sudo make install
 </pre>
-	Note: 'sudo make install' also installs a few command line programs: geoiplookup, geoiplookup6, and geoipupdate. You probably don't want them. To remove them, just delete them from '/usr/local/bin/'.
+
+Note: 'sudo make install' also installs a few command line programs: geoiplookup, geoiplookup6, and geoipupdate. You probably don't want them. To remove them, just delete them from '/usr/local/bin/'.
 
 3. Download this project and build it:
 <pre>
@@ -29,6 +30,7 @@ GeoIP.js works by providing v8->C++ glue code that interfaces with the [free Max
 	cd geoip  
 	node-waf configure build
 </pre>
+
 4. Download the MaxMind Geocoding Database file, [GeoLiteCity.dat.gz](http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz). Un-gzip this file and stick it where ever you want.
 
 5. That's it! Let's look at some code:
