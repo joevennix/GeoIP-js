@@ -27,7 +27,7 @@ Note: 'sudo make install' also installs a few command line programs: geoiplookup
 3. Download this project and build it:
 <pre>
 	git clone git@github.com:joevennix/GeoIP-js.git  
-	cd geoip  
+	cd GeoIP-JS  
 	node-waf configure build
 </pre>
 
@@ -35,7 +35,7 @@ Note: 'sudo make install' also installs a few command line programs: geoiplookup
 
 5. That's it! Let's look at some code:
 <pre>
-	var geo = require('./geoip/geoip.js');  
+	var geo = require('./GeoIP-JS/geoip.js');  
 	geo.open({ cache: true, filename: './geoip/GeoLiteCity.dat'});  
 	var coord = geo.lookup('74.125.227.16');  
 	console.log(coord);  
