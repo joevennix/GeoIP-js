@@ -35,3 +35,7 @@ GeoIP.js works by providing v8->C++ glue code that interfaces with the [free Max
     var coord = geo.lookup('74.125.227.16');
     console.log(coord);
     geo.close();</pre>
+You should see the ouput:
+	<pre>$ node test.js 
+[ 37.4192008972168, -122.05740356445312 ]
+$ </pre>

@@ -58,7 +58,12 @@ namespace geoip {
 		bool cache_on = args[0]->ToBoolean()->Value();
 		
 		gi = GeoIP_open(path_cstr, cache_on?GEOIP_MEMORY_CACHE:GEOIP_STANDARD);
-		db_edition = GeoIP_database_edition(gi);
+		if (gi != NULL) {
+			db_edition = GeoIP_database_edition(gi);
+			return Number::New(1);
+		} else {
+			return Number::New(0);
+		}
 	}
 	
 	// Destroy the GeoIP* reference we're holding on to

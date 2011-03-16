@@ -15,13 +15,14 @@ function GeoIP() { this.isOpen = false; }
 //		geo.open({cache:true, filename:'./GeoLiteCity.dat'});
 GeoIP.prototype.open = function(options) {
 	if (options.cache === null) options.cache = true;
-	if (options.filename === null) options.filename = './GeoLiteCity.dat';
+	if (options.filename === null) options.filename = 'GeoLiteCity.dat';
 	
 	if (this.isOpen) {
 		this.close();
 	}
-	geoip.open(options.cache, options.filename);
-	this.isOpen = true;
+	if (geoip.open(options.cache, options.filename)) {
+		this.isOpen = true;
+	}
 }
 
 // Grabs the latitude/longitude and returns it as an array of
