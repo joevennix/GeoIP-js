@@ -31,6 +31,7 @@ namespace geoip {
 		ip_str->WriteAscii(ip_cstr);		
 		uint32_t ipnum = _GeoIP_lookupaddress(ip_cstr);
 		if (ipnum == 0) {
+			// On IP address error, return [0,0]
 			Local<Array> coords = Array::New(2);
 			coords->Set(Number::New(0), Number::New(0));
 			coords->Set(Number::New(1), Number::New(0));
@@ -59,9 +60,11 @@ namespace geoip {
 		
 		gi = GeoIP_open(path_cstr, cache_on?GEOIP_MEMORY_CACHE:GEOIP_STANDARD);
 		if (gi != NULL) {
+			// Successfully opened the file, return 1 (true)
 			db_edition = GeoIP_database_edition(gi);
 			return Number::New(1);
 		} else {
+			// Error! return 0 (false)
 			return Number::New(0);
 		}
 	}

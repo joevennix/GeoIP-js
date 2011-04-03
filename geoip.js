@@ -14,15 +14,16 @@ function GeoIP() { this.isOpen = false; }
 // Finds and opens the database file. Example usage:
 //		geo.open({cache:true, filename:'./GeoLiteCity.dat'});
 GeoIP.prototype.open = function(options) {
-	if (options.cache === null) options.cache = true;
-	if (options.filename === null) options.filename = 'GeoLiteCity.dat';
-	
-	if (this.isOpen) {
+	// Set up the default options (cache:true, filename:GeoLiteCity.dat)
+	if (options.cache === null) 
+		options.cache = true;
+	if (options.filename === null) 
+		options.filename = 'GeoLiteCity.dat';
+	if (this.isOpen)
 		this.close();
-	}
-	if (geoip.open(options.cache, options.filename)) {
+	// Open up the database.
+	if (geoip.open(options.cache, options.filename))
 		this.isOpen = true;
-	}
 }
 
 // Grabs the latitude/longitude and returns it as an array of
