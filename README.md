@@ -1,6 +1,8 @@
 # GeoIP.js
 ### A fast IP Address geocoder for node.js
 
+#A better, faster, more in-depth IP geocoder for node.js called <a href="https://github.com/kuno/GeoIP">GeoIP</a> -- inspired by this project -- is now available from Kuno. I would recommend using that library.
+
 > What is it?
 
 GeoIP.js is a simple, three method class that allows you to enter an IP address and get back a latitude/longitude.
